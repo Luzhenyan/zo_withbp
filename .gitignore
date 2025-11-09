@@ -37,9 +37,16 @@ ENV/
 .ipynb_checkpoints
 
 # Logs and outputs
-logs/
-test_logs/
-experiment_logs/
+# Allow .log and .csv files in logs directories
+logs/*
+!logs/**/*.log
+!logs/**/*.csv
+test_logs/*
+!test_logs/**/*.log
+!test_logs/**/*.csv
+experiment_logs/*
+!experiment_logs/**/*.log
+!experiment_logs/**/*.csv
 *.png
 *.jpg
 *.pdf
