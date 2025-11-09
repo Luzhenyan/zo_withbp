@@ -274,8 +274,17 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
     min_similarity = min(min_similarity, 0.9999)
     eps = 1e-12
 
-    # 在CPU上处理梯度分析以节省GPU显存（对于大模型非常重要）
-    grad_flat = torch.cat([g.flatten().cpu() for g in bp_grads])  # 在CPU上拼接
+    # 检查模型大小，决定在CPU还是GPU上处理
+    # 对于大模型(>500M参数)，在CPU上处理以节省GPU显存
+    total_params = sum(g.numel() for g in bp_grads)
+    use_cpu_for_analysis = total_params > 500_000_000  # 500M参数阈值
+    
+    if use_cpu_for_analysis:
+        # 大模型：在CPU上处理梯度分析以节省GPU显存
+        grad_flat = torch.cat([g.flatten().cpu() for g in bp_grads])
+    else:
+        # 小模型：在GPU上处理以保持性能
+        grad_flat = torch.cat([g.flatten().to(device) for g in bp_grads])
     d = grad_flat.numel()
     total_norm_sq = float(torch.sum(grad_flat * grad_flat).item())
     if total_norm_sq <= eps:
@@ -283,12 +292,12 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
 
     energy_threshold = min_similarity ** 2 * total_norm_sq
 
-    abs_sq = grad_flat.abs().pow(2)  # 在CPU上计算
+    abs_sq = grad_flat.abs().pow(2)
     initial_rank = min(64, d)
     k = max(1, initial_rank)
 
     while True:
-        values, indices = torch.topk(abs_sq, k, largest=True)  # 在CPU上计算topk
+        values, indices = torch.topk(abs_sq, k, largest=True)
         captured_energy = float(values.sum().item())
         if captured_energy >= energy_threshold or k >= d:
             break
@@ -297,7 +306,7 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
         if k == previous_k:
             break
 
-    cumsum_values = torch.cumsum(values, dim=0)  # 在CPU上计算
+    cumsum_values = torch.cumsum(values, dim=0)
     if energy_threshold <= float(cumsum_values[-1].item()):
         effective_rank_idx = torch.searchsorted(cumsum_values, torch.tensor(energy_threshold, device=cumsum_values.device))
         effective_rank = int(effective_rank_idx.item()) + 1
@@ -307,7 +316,7 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
     effective_rank = max(1, min(effective_rank, values.numel()))
     # 候选索引池：使用更大的集合以支持随机采样多样性
     candidate_pool_size = min(max(effective_rank * 2, 128), k)
-    candidate_indices = indices[:candidate_pool_size]  # 在CPU上
+    candidate_indices = indices[:candidate_pool_size]
 
     def generator():
         total_start_time = time.time()
@@ -321,16 +330,20 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
             # 从候选池中随机采样，确保能量满足阈值
             max_selected = min(candidate_pool_size, effective_rank * 2)
             
-            # 尝试不同的采样策略：随机选择索引（所有操作在CPU上）
+            # 尝试不同的采样策略：随机选择索引
             num_selected = effective_rank
             for attempt in range(10):  # 最多尝试10次
-                # 随机打乱候选索引并选择前num_selected个（在CPU上）
-                perm = torch.randperm(candidate_pool_size, device='cpu')
+                # 随机打乱候选索引并选择前num_selected个
+                # 大模型在CPU上生成以节省GPU显存
+                if use_cpu_for_analysis:
+                    perm = torch.randperm(candidate_pool_size, device='cpu')
+                else:
+                    perm = torch.randperm(candidate_pool_size, device=device)
                 selected_from_pool = perm[:num_selected]
-                selected_indices_cpu = candidate_indices[selected_from_pool]  # 在CPU上
+                selected_indices_local = candidate_indices[selected_from_pool]
                 
-                # 检查能量是否满足阈值（在CPU上）
-                selected_abs_sq = abs_sq[selected_indices_cpu]
+                # 检查能量是否满足阈值
+                selected_abs_sq = abs_sq[selected_indices_local]
                 captured_energy = float(selected_abs_sq.sum().item())
                 
                 if captured_energy >= energy_threshold:

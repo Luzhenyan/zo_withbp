@@ -44,7 +44,18 @@ MODEL_CONFIGS = {
         'estimated_params': '500M',
     },
     
-    # 大型模型 (~1B 参数)
+    # 大型模型 (~800M 参数)
+    # 比1B稍小，显存友好
+    '800M': {
+        'n_embd': 1536,     # 嵌入维度
+        'n_layer': 28,      # Transformer 层数
+        'n_head': 24,       # 注意力头数
+        'n_positions': 1024, # 最大序列长度
+        'description': '大型模型，约800M参数，比1B更节省显存',
+        'estimated_params': '800M',
+    },
+    
+    # 超大型模型 (~1B 参数)
     # 类似 GPT-2 Large/XL 的规模
     '1B': {
         'n_embd': 1600,     # 嵌入维度（增大到1600）
