@@ -1526,7 +1526,7 @@ if __name__ == "__main__":
     
     # 模型和数据集参数
     parser.add_argument("--model_size", type=str, default='200M', 
-                        choices=['20M', '200M', '500M', '1B'],
+                        choices=['20M', '200M', '500M', '800M', '1B'],
                         help="Model size: 20M (fast), 200M (GPT-2 Small), 500M (medium), 1B (large).")
     parser.add_argument("--dataset", type=str, default='cosmopedia-100k',
                         choices=['cosmopedia-100k', 'cosmopedia', 'wikitext-103', 'openwebtext', 
