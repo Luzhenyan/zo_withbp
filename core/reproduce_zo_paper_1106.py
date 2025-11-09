@@ -324,7 +324,8 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
             num_selected = effective_rank
             for attempt in range(10):  # 最多尝试10次
                 # 随机打乱候选索引并选择前num_selected个
-                perm = torch.randperm(candidate_pool_size, device=device)
+                # 在CPU上生成以节省GPU显存，然后转到GPU（开销<50ms，可忽略）
+                perm = torch.randperm(candidate_pool_size, device='cpu').to(device)
                 selected_from_pool = perm[:num_selected]
                 selected_indices = candidate_indices[selected_from_pool]
                 
@@ -468,7 +469,8 @@ def generate_instruct_directions_blocked(
             captured_energy = 0.0
             for attempt in range(10):  # 最多尝试10次
                 # 随机打乱候选索引并选择前num_selected个
-                perm = torch.randperm(candidate_pool_size, device=device)
+                # 在CPU上生成以节省GPU显存，然后转到GPU（开销<50ms，可忽略）
+                perm = torch.randperm(candidate_pool_size, device='cpu').to(device)
                 selected_from_pool = perm[:num_selected]
                 selected_indices = candidate_indices[selected_from_pool]
                 

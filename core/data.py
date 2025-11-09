@@ -369,6 +369,11 @@ def get_dataloader(
             torch.tensor(tokenized_texts[i:i + block_size], dtype=torch.long)
         )
     
+    # 如果指定了max_samples，限制blocks数量（避免生成过多blocks）
+    if max_samples is not None and len(examples) > max_samples * 100:
+        print(f"Warning: Generated {len(examples)} blocks from {max_samples} samples. Limiting to {max_samples * 100} blocks.")
+        examples = examples[:max_samples * 100]
+    
     print(f"Dataset prepared. Total blocks: {len(examples)}")
     
     # 保存到缓存
