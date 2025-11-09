@@ -1,6 +1,6 @@
 # Zero-Order Optimization (ZO) Training Project
 
-零次优化训练项目 - 使用零次优化方法训练GPT-2语言模型
+零阶优化训练项目 - 使用零阶优化方法训练GPT-2语言模型
 
 ## 📁 目录结构
 
@@ -123,12 +123,19 @@ python visualization/plot_all_results.py
 
 ### core/model.py
 - 定义GPT-2模型配置（20M, 200M, 500M, 1B）
+- 模型规模：
+  - 20M: ~17M 参数
+  - 200M: ~200M 参数
+  - 500M: ~500M 参数
+  - 1B: ~1066M 参数（真正接近1B）
 - 提供 `create_model()` 函数创建模型
 
 ### core/data.py
 - 数据集配置和加载
 - 支持多种数据集（Cosmopedia, WikiText, 本地数据集等）
+- 本地数据集：dclm-local, pubmedqa-local, dclm-pubmedqa-merged
 - 提供 `get_dataloader()` 函数加载数据
+- 自动限制生成的数据块数量以加快测试
 
 ## 📝 注意事项
 
@@ -146,10 +153,42 @@ python visualization/plot_all_results.py
 
 4. **推荐使用**：
    - 训练脚本：`core/reproduce_zo_paper_1106.py`（最新版本，功能最全）
+   - 实验脚本：`experiments/run_merged_dataset_experiments.sh`（混合数据集对比实验）
+   - 测试脚本：`experiments/test_1b_model.sh`（1B模型测试）
 
 ## 🔗 相关链接
 
 - 项目文档：`docs/README_SCRIPTS.md`
 - 脚本分析：`docs/SCRIPT_ANALYSIS.md`
 - 依赖列表：`docs/requirements.txt`
+- GitHub 仓库：https://github.com/Luzhenyan/zo_withbp
+
+## 📊 实验脚本
+
+### 混合数据集对比实验
+```bash
+./experiments/run_merged_dataset_experiments.sh
+```
+三个实验对比不同的数据使用策略：
+1. BP和ZO数据分割，ZO各方向独立数据
+2. BP和ZO数据分割，ZO各方向共享数据
+3. 纯BP训练（基线）
+
+### 1B模型测试
+```bash
+./experiments/test_1b_model.sh
+```
+测试1B模型在三种模式下是否能正常运行：
+1. BP only (FO模式)
+2. ZO only
+3. BP+ZO (Instruct模式)
+
+## 🔄 最近更新
+
+- **2024-11-10**: 
+  - 修复1B模型CUDA OOM问题（将随机排列生成移到CPU）
+  - 增大1B模型参数到1066M（更接近真正的1B）
+  - 修复数据加载：限制生成的blocks数量
+  - 创建混合数据集实验脚本
+  - 完善conda环境配置
 
