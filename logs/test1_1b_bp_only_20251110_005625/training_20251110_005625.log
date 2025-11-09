@@ -1,0 +1,17 @@
+2025-11-10 00:56:25,182 - INFO - Run directory initialized at /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625
+2025-11-10 00:57:21,144 - INFO - Starting training run 'test1_1b_bp_only' with configuration: mode=FO scope=full q=1 lr=0.001 epochs=1 batch_size=1 optimizer=mudamw bp_interval=None blend_bp_gradient=True device=cuda dataset=dclm-pubmedqa-merged model_size=1B max_samples=20 bp_dataset=same_as_main bp_max_samples=default
+2025-11-10 00:57:21,146 - INFO - Trainable parameters: 758.73M (100.00% of total 758.73M)
+2025-11-10 00:57:21,209 - INFO - Using optimizer: MUDAMW
+2025-11-10 00:57:21,211 - INFO - Epoch 1/1 started
+2025-11-10 00:57:45,940 - INFO - step=10 epoch=1 loss=9.273152 grad_norm=36.022631 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:57:58,713 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625/checkpoint
+2025-11-10 00:58:22,688 - INFO - step=20 epoch=1 loss=9.386447 grad_norm=25.126208 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:58:36,339 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625/checkpoint
+2025-11-10 00:59:00,363 - INFO - step=30 epoch=1 loss=9.773478 grad_norm=19.078259 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:59:14,706 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625/checkpoint
+2025-11-10 00:59:38,742 - INFO - step=40 epoch=1 loss=9.148255 grad_norm=16.224828 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:59:53,382 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625/checkpoint
+2025-11-10 01:00:17,450 - INFO - step=50 epoch=1 loss=8.339179 grad_norm=14.851943 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 01:00:33,971 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625/checkpoint
+2025-11-10 01:00:58,067 - INFO - step=60 epoch=1 loss=8.894858 grad_norm=13.965016 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 01:01:12,215 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test1_1b_bp_only_20251110_005625/checkpoint

@@ -1,0 +1,16 @@
+2025-11-10 00:56:25,247 - INFO - Run directory initialized at /home/polyu/pcllzy/zo_withbp/logs/test2_1b_zo_only_20251110_005625
+2025-11-10 00:57:21,145 - INFO - Starting training run 'test2_1b_zo_only' with configuration: mode=ZO scope=full q=8 lr=0.001 epochs=1 batch_size=1 optimizer=mudamw bp_interval=None blend_bp_gradient=True device=cuda dataset=dclm-pubmedqa-merged model_size=1B max_samples=20 bp_dataset=same_as_main bp_max_samples=default
+2025-11-10 00:57:21,147 - INFO - Trainable parameters: 758.73M (100.00% of total 758.73M)
+2025-11-10 00:57:21,148 - INFO - ZO queries will use fresh data batches per direction.
+2025-11-10 00:57:21,212 - INFO - Using optimizer: MuDaMW
+2025-11-10 00:57:21,214 - INFO - Epoch 1/1 started
+2025-11-10 00:57:55,305 - INFO - step=10 epoch=1 loss=11.061336 grad_norm=659062.140105 eval_loss=N/A mode=ZO scope=full q=8 bp_interval=N/A
+2025-11-10 00:58:08,361 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test2_1b_zo_only_20251110_005625/checkpoint
+2025-11-10 00:58:41,839 - INFO - step=20 epoch=1 loss=10.961703 grad_norm=556546.908765 eval_loss=N/A mode=ZO scope=full q=8 bp_interval=N/A
+2025-11-10 00:58:55,980 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test2_1b_zo_only_20251110_005625/checkpoint
+2025-11-10 00:59:29,464 - INFO - step=30 epoch=1 loss=11.041448 grad_norm=642940.774507 eval_loss=N/A mode=ZO scope=full q=8 bp_interval=N/A
+2025-11-10 00:59:45,412 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test2_1b_zo_only_20251110_005625/checkpoint
+2025-11-10 01:00:18,933 - INFO - step=40 epoch=1 loss=11.029220 grad_norm=457948.090517 eval_loss=N/A mode=ZO scope=full q=8 bp_interval=N/A
+2025-11-10 01:00:33,588 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test2_1b_zo_only_20251110_005625/checkpoint
+2025-11-10 01:01:07,136 - INFO - step=50 epoch=1 loss=10.700131 grad_norm=977528.230669 eval_loss=N/A mode=ZO scope=full q=8 bp_interval=N/A
+2025-11-10 01:01:22,546 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/test2_1b_zo_only_20251110_005625/checkpoint

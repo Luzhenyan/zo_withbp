@@ -1,0 +1,17 @@
+2025-11-10 00:48:48,429 - INFO - Run directory initialized at /home/polyu/pcllzy/zo_withbp/logs/exp1_bp2_zo64_split_20251110_004848
+2025-11-10 00:49:31,333 - INFO - Dataset split: BP subset = 54346 samples, ZO subset = 54347 samples
+2025-11-10 00:49:31,334 - INFO - BP dataloader created from split subset, batch_size: 2
+2025-11-10 00:49:31,334 - INFO - Starting training run 'exp1_bp2_zo64_split' with configuration: mode=Instruct scope=full q=64 lr=0.001 epochs=2 batch_size=1 optimizer=mudamw bp_interval=1 blend_bp_gradient=True device=cuda dataset=dclm-pubmedqa-merged model_size=200M max_samples=None bp_dataset=same_as_main bp_max_samples=default
+2025-11-10 00:49:31,335 - INFO - Trainable parameters: 124.44M (100.00% of total 124.44M)
+2025-11-10 00:49:31,336 - INFO - ZO queries will use fresh data batches per direction from split subset (non-overlapping with BP).
+2025-11-10 00:49:31,336 - INFO - BP will use separate dataset: None
+2025-11-10 00:49:31,349 - INFO - Using optimizer: MuDaMW
+2025-11-10 00:49:31,350 - INFO - Epoch 1/2 started
+2025-11-10 00:50:15,108 - INFO - step=10 epoch=1 loss=10.142856 grad_norm=179.915046 eval_loss=N/A mode=Instruct scope=full q=64 bp_interval=1
+2025-11-10 00:50:17,054 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp1_bp2_zo64_split_20251110_004848/checkpoint
+2025-11-10 00:51:00,843 - INFO - step=20 epoch=1 loss=9.914967 grad_norm=51.132144 eval_loss=N/A mode=Instruct scope=full q=64 bp_interval=1
+2025-11-10 00:51:02,816 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp1_bp2_zo64_split_20251110_004848/checkpoint
+2025-11-10 00:51:49,737 - INFO - step=30 epoch=1 loss=9.573911 grad_norm=41.494451 eval_loss=N/A mode=Instruct scope=full q=64 bp_interval=1
+2025-11-10 00:51:51,702 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp1_bp2_zo64_split_20251110_004848/checkpoint
+2025-11-10 00:52:39,649 - INFO - step=40 epoch=1 loss=9.276084 grad_norm=37.146063 eval_loss=N/A mode=Instruct scope=full q=64 bp_interval=1
+2025-11-10 00:52:41,659 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp1_bp2_zo64_split_20251110_004848/checkpoint

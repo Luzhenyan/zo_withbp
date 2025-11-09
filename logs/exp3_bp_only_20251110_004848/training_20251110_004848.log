@@ -1,0 +1,86 @@
+2025-11-10 00:48:48,428 - INFO - Run directory initialized at /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848
+2025-11-10 00:49:31,296 - INFO - Starting training run 'exp3_bp_only' with configuration: mode=FO scope=full q=1 lr=0.001 epochs=2 batch_size=2 optimizer=mudamw bp_interval=None blend_bp_gradient=True device=cuda dataset=dclm-pubmedqa-merged model_size=200M max_samples=None bp_dataset=same_as_main bp_max_samples=default
+2025-11-10 00:49:31,297 - INFO - Trainable parameters: 124.44M (100.00% of total 124.44M)
+2025-11-10 00:49:31,311 - INFO - Using optimizer: MUDAMW
+2025-11-10 00:49:31,313 - INFO - Epoch 1/2 started
+2025-11-10 00:49:34,755 - INFO - step=10 epoch=1 loss=10.033950 grad_norm=11.997143 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:49:36,795 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:49:39,373 - INFO - step=20 epoch=1 loss=9.939037 grad_norm=27.404449 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:49:41,471 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:49:44,053 - INFO - step=30 epoch=1 loss=9.870525 grad_norm=9.075014 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:49:45,986 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:49:48,579 - INFO - step=40 epoch=1 loss=9.737962 grad_norm=6.954150 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:49:50,715 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:49:53,317 - INFO - step=50 epoch=1 loss=9.173573 grad_norm=6.969684 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:49:55,391 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:49:57,988 - INFO - step=60 epoch=1 loss=9.899569 grad_norm=6.737176 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:00,171 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:02,773 - INFO - step=70 epoch=1 loss=9.632845 grad_norm=6.209917 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:05,080 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:07,678 - INFO - step=80 epoch=1 loss=9.576944 grad_norm=5.688269 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:09,906 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:12,495 - INFO - step=90 epoch=1 loss=9.198794 grad_norm=6.233995 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:14,725 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:17,343 - INFO - step=100 epoch=1 loss=9.054935 grad_norm=5.964714 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:19,581 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:22,188 - INFO - step=110 epoch=1 loss=8.845078 grad_norm=6.739116 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:24,280 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:26,878 - INFO - step=120 epoch=1 loss=9.342853 grad_norm=5.558699 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:29,099 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:31,700 - INFO - step=130 epoch=1 loss=8.650221 grad_norm=6.633358 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:33,815 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:36,419 - INFO - step=140 epoch=1 loss=6.751703 grad_norm=6.161579 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:38,346 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:40,948 - INFO - step=150 epoch=1 loss=9.609923 grad_norm=5.552901 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:43,106 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:45,702 - INFO - step=160 epoch=1 loss=9.057661 grad_norm=5.699907 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:47,946 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:50,544 - INFO - step=170 epoch=1 loss=9.238958 grad_norm=4.843494 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:52,774 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:50:55,370 - INFO - step=180 epoch=1 loss=9.225411 grad_norm=6.046940 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:50:57,563 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:00,173 - INFO - step=190 epoch=1 loss=8.637647 grad_norm=6.270456 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:02,409 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:05,017 - INFO - step=200 epoch=1 loss=8.894068 grad_norm=6.395585 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:07,044 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:09,655 - INFO - step=210 epoch=1 loss=8.778473 grad_norm=7.151885 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:11,857 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:14,472 - INFO - step=220 epoch=1 loss=8.843490 grad_norm=5.513948 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:16,763 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:19,365 - INFO - step=230 epoch=1 loss=9.050336 grad_norm=6.344287 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:21,638 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:24,239 - INFO - step=240 epoch=1 loss=7.860407 grad_norm=4.991157 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:26,677 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:29,276 - INFO - step=250 epoch=1 loss=8.603935 grad_norm=9.417471 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:31,514 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:34,112 - INFO - step=260 epoch=1 loss=8.491204 grad_norm=4.822996 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:36,272 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:38,889 - INFO - step=270 epoch=1 loss=8.553655 grad_norm=4.507595 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:41,143 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:43,745 - INFO - step=280 epoch=1 loss=8.178226 grad_norm=6.832513 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:46,005 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:48,606 - INFO - step=290 epoch=1 loss=8.281891 grad_norm=4.187428 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:50,827 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:53,451 - INFO - step=300 epoch=1 loss=8.593118 grad_norm=5.078292 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:51:55,901 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:51:58,503 - INFO - step=310 epoch=1 loss=8.106517 grad_norm=4.408848 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:00,699 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:03,325 - INFO - step=320 epoch=1 loss=7.582947 grad_norm=5.159636 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:05,613 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:08,242 - INFO - step=330 epoch=1 loss=7.579128 grad_norm=5.000678 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:10,485 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:13,112 - INFO - step=340 epoch=1 loss=7.753618 grad_norm=4.278663 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:15,414 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:18,033 - INFO - step=350 epoch=1 loss=7.511445 grad_norm=4.315210 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:20,395 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:23,068 - INFO - step=360 epoch=1 loss=8.076544 grad_norm=5.393458 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:25,275 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:27,911 - INFO - step=370 epoch=1 loss=8.733607 grad_norm=4.426962 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:30,186 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:32,814 - INFO - step=380 epoch=1 loss=8.055938 grad_norm=4.735217 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:35,003 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:37,633 - INFO - step=390 epoch=1 loss=7.618395 grad_norm=4.355031 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:39,944 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:42,573 - INFO - step=400 epoch=1 loss=8.116729 grad_norm=4.652496 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A
+2025-11-10 00:52:44,830 - INFO - Checkpoint saved to /home/polyu/pcllzy/zo_withbp/logs/exp3_bp_only_20251110_004848/checkpoint
+2025-11-10 00:52:47,458 - INFO - step=410 epoch=1 loss=7.523964 grad_norm=4.115399 eval_loss=N/A mode=FO scope=full q=N/A bp_interval=N/A

@@ -1,0 +1,1 @@
+timestamp,epoch,step,mode,scope,q,lr,batch_size,optimizer,bp_interval,loss,grad_norm,eval_loss

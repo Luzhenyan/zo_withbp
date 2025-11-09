@@ -1,0 +1,36 @@
+Using device: cuda
+Logs will be stored in /home/polyu/pcllzy/zo_withbp/logs/exp2_bp2_zo64_shared_20251110_005354
+成功从本地加载tokenizer: /home/polyu/pcllzy/zo_withbp/tokenizer
+Creating model: 200M
+Description: 中小型模型，约200M参数，类似GPT-2 Small
+Configuration:
+  - Embedding dim: 768
+  - Layers: 12
+  - Attention heads: 12
+  - Max position: 1024
+  - Vocab size: 50258
+
+Model created successfully!
+Total parameters: 124,440,576 (124.44M)
+Trainable parameters: 124,440,576 (124.44M)
+Loading dataset from cache: cache/dataset_dclm-pubmedqa-merged_bs128_samplesNone.pkl
+Dataset loaded from cache. Total samples: 108693
+BP batch size: 2 (different from training batch size: 1)
+ZO query batch size: 2 (different from training batch size: 1)
+Splitting dataset for BP and ZO (non-overlapping)...
+Dataset split: BP subset = 54346 samples, ZO subset = 54347 samples
+Creating BP dataloader from split subset, batch_size: 2
+Training scope: full model.
+Trainable parameters: 124.44M (100.00% of total)
+ZO queries will share data across all directions (total 128 samples).
+ZO queries will share 128 samples across all 64 directions.
+BP will use separate dataset: None
+Using optimizer: MuDaMW
+Epoch 1/2:   0%|          | 0/108693 [00:00<?, ?it/s][Instruct] Summary: avg_rank=7916241.0, avg_cosine_similarity=0.900847, total_time=53.4401s
+Epoch 1/2:   0%|          | 0/108693 [00:55<?, ?it/s, loss=10.9652, grad_norm=2106.9327, opt=mudamw, queries=64, bp_int=1]Epoch 1/2:   0%|          | 1/108693 [00:55<1688:08:41, 55.91s/it, loss=10.9652, grad_norm=2106.9327, opt=mudamw, queries=64, bp_int=1][Instruct] Summary: avg_rank=8388608.0, avg_cosine_similarity=0.936114, total_time=54.0235s
+Epoch 1/2:   0%|          | 1/108693 [01:51<1688:08:41, 55.91s/it, loss=10.4998, grad_norm=1425.9632, opt=mudamw, queries=64, bp_int=1]Epoch 1/2:   0%|          | 2/108693 [01:51<1676:25:24, 55.53s/it, loss=10.4998, grad_norm=1425.9632, opt=mudamw, queries=64, bp_int=1][Instruct] Summary: avg_rank=8388608.0, avg_cosine_similarity=0.930209, total_time=54.1844s
+Epoch 1/2:   0%|          | 2/108693 [02:46<1676:25:24, 55.53s/it, loss=10.5843, grad_norm=1428.0876, opt=mudamw, queries=64, bp_int=1]Epoch 1/2:   0%|          | 3/108693 [02:46<1674:57:20, 55.48s/it, loss=10.5843, grad_norm=1428.0876, opt=mudamw, queries=64, bp_int=1][Instruct] Summary: avg_rank=8388608.0, avg_cosine_similarity=0.928567, total_time=54.2878s
+Epoch 1/2:   0%|          | 3/108693 [03:42<1674:57:20, 55.48s/it, loss=10.4694, grad_norm=792.0123, opt=mudamw, queries=64, bp_int=1] Epoch 1/2:   0%|          | 4/108693 [03:42<1675:26:00, 55.49s/it, loss=10.4694, grad_norm=792.0123, opt=mudamw, queries=64, bp_int=1][Instruct] Summary: avg_rank=8388608.0, avg_cosine_similarity=0.932095, total_time=54.2495s
+Epoch 1/2:   0%|          | 4/108693 [04:37<1675:26:00, 55.49s/it, loss=10.3649, grad_norm=821.7660, opt=mudamw, queries=64, bp_int=1]Epoch 1/2:   0%|          | 5/108693 [04:37<1675:18:55, 55.49s/it, loss=10.3649, grad_norm=821.7660, opt=mudamw, queries=64, bp_int=1][Instruct] Summary: avg_rank=8388608.0, avg_cosine_similarity=0.927902, total_time=54.2621s
+Epoch 1/2:   0%|          | 5/108693 [05:33<1675:18:55, 55.49s/it, loss=10.4681, grad_norm=267.6124, opt=mudamw, queries=64, bp_int=1]Epoch 1/2:   0%|          | 6/108693 [05:33<1675:23:07, 55.49s/it, loss=10.4681, grad_norm=267.6124, opt=mudamw, queries=64, bp_int=1][Instruct] Summary: avg_rank=8388608.0, avg_cosine_similarity=0.929602, total_time=54.2661s
+Epoch 1/2:   0%|          | 6/108693 [06:28<1675:23:07, 55.49s/it, loss=10.2192, grad_norm=233.4567, opt=mudamw, queries=64, bp_int=1]Epoch 1/2:   0%|          | 7/108693 [06:28<1675:29:37, 55.50s/it, loss=10.2192, grad_norm=233.4567, opt=mudamw, queries=64, bp_int=1]

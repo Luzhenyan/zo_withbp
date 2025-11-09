@@ -1,0 +1,9 @@
+2025-11-10 00:48:48,379 - INFO - Run directory initialized at /home/polyu/pcllzy/zo_withbp/logs/exp2_bp2_zo64_shared_20251110_004848
+2025-11-10 00:49:31,273 - INFO - Dataset split: BP subset = 54346 samples, ZO subset = 54347 samples
+2025-11-10 00:49:31,273 - INFO - BP dataloader created from split subset, batch_size: 2
+2025-11-10 00:49:31,273 - INFO - Starting training run 'exp2_bp2_zo64_shared' with configuration: mode=Instruct scope=full q=64 lr=0.001 epochs=2 batch_size=1 optimizer=mudamw bp_interval=1 blend_bp_gradient=True device=cuda dataset=dclm-pubmedqa-merged model_size=200M max_samples=None bp_dataset=same_as_main bp_max_samples=default
+2025-11-10 00:49:31,274 - INFO - Trainable parameters: 124.44M (100.00% of total 124.44M)
+2025-11-10 00:49:31,275 - INFO - ZO queries will share 128 samples across all 64 directions
+2025-11-10 00:49:31,275 - INFO - BP will use separate dataset: None
+2025-11-10 00:49:31,289 - INFO - Using optimizer: MuDaMW
+2025-11-10 00:49:31,290 - INFO - Epoch 1/2 started

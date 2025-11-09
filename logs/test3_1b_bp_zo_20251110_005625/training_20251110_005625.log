@@ -1,0 +1,6 @@
+2025-11-10 00:56:25,247 - INFO - Run directory initialized at /home/polyu/pcllzy/zo_withbp/logs/test3_1b_bp_zo_20251110_005625
+2025-11-10 00:57:22,176 - INFO - Starting training run 'test3_1b_bp_zo' with configuration: mode=Instruct scope=full q=8 lr=0.001 epochs=1 batch_size=1 optimizer=mudamw bp_interval=1 blend_bp_gradient=True device=cuda dataset=dclm-pubmedqa-merged model_size=1B max_samples=20 bp_dataset=same_as_main bp_max_samples=default
+2025-11-10 00:57:22,177 - INFO - Trainable parameters: 758.73M (100.00% of total 758.73M)
+2025-11-10 00:57:22,179 - INFO - ZO queries will use fresh data batches per direction.
+2025-11-10 00:57:22,233 - INFO - Using optimizer: MuDaMW
+2025-11-10 00:57:22,235 - INFO - Epoch 1/1 started
