@@ -38,13 +38,12 @@ ENV/
 
 # Logs and outputs
 logs/
-*.log
 test_logs/
 experiment_logs/
-*.csv
 *.png
 *.jpg
 *.pdf
+# Note: .log and .csv files are allowed to be tracked
 
 # Cache
 cache/
