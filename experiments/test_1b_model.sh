@@ -10,9 +10,9 @@ SCRIPT="core/reproduce_zo_paper_1106.py"
 DATASET="dclm-pubmedqa-merged"  # 混合数据集
 
 # 测试参数（使用小数据集和少步数快速测试）
-MODEL_SIZE="1B"
+MODEL_SIZE="800M"  # 使用800M模型（872M参数），比1B更节省显存
 EPOCHS=1  # 只测试1个epoch
-MAX_SAMPLES=20  # 只使用20个样本，快速验证（约10-20步）
+MAX_SAMPLES=20  # 只使用20个样本，快速验证
 EVAL_INTERVAL=0  # 不进行评估，加快速度
 SCOPE="full"
 LEARNING_RATE=0.001
@@ -27,9 +27,9 @@ LOG_DIR="test_logs/1b_model_test_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$LOG_DIR"
 
 echo "=========================================="
-echo "1B模型测试 - 验证能否正常运行"
+echo "800M模型测试 - 验证能否正常运行"
 echo "=========================================="
-echo "模型大小: $MODEL_SIZE"
+echo "模型大小: $MODEL_SIZE (实际约872M参数)"
 echo "数据集: $DATASET"
 echo "最大样本数: $MAX_SAMPLES (约10-20步)"
 echo "日志目录: $LOG_DIR"
