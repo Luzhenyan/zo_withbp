@@ -353,11 +353,11 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
             
             # 如果还是不够，使用top-k策略作为fallback
             if captured_energy < energy_threshold:
-                selected_indices = indices[:effective_rank]
+                selected_indices_local = indices[:effective_rank]
 
             # 基于选中的索引生成方向
             projection_flat = torch.zeros_like(grad_flat)
-            projection_flat[selected_indices] = grad_flat[selected_indices]
+            projection_flat[selected_indices_local] = grad_flat[selected_indices_local]
 
             proj_norm = projection_flat.norm() + eps
             if proj_norm <= eps:
@@ -372,7 +372,7 @@ def generate_instruct_directions_with_R(bp_grads, q, cosine_target, total_norm, 
 
             # 累积统计信息
             total_cosine_sim += actual_cosine_sim.item()
-            total_rank += len(selected_indices)
+            total_rank += len(selected_indices_local)
 
             direction = []
             start = 0
@@ -485,10 +485,10 @@ def generate_instruct_directions_blocked(
                 # 在CPU上生成以节省GPU显存，然后转到GPU（开销<50ms，可忽略）
                 perm = torch.randperm(candidate_pool_size, device='cpu').to(device)
                 selected_from_pool = perm[:num_selected]
-                selected_indices = candidate_indices[selected_from_pool]
+                selected_indices_local = candidate_indices[selected_from_pool]
                 
                 # 检查能量是否满足阈值
-                selected_abs_sq = abs_sq[selected_indices]
+                selected_abs_sq = abs_sq[selected_indices_local]
                 captured_energy = float(selected_abs_sq.sum().item())
                 
                 if captured_energy >= energy_threshold:
@@ -498,11 +498,11 @@ def generate_instruct_directions_blocked(
             
             # 如果还是不够，使用top-k策略作为fallback
             if captured_energy < energy_threshold:
-                selected_indices = indices[:effective_rank]
+                selected_indices_local = indices[:effective_rank]
 
             # 基于选中的索引生成方向
             projection_flat = torch.zeros_like(grad_flat)
-            projection_flat[selected_indices] = grad_flat[selected_indices]
+            projection_flat[selected_indices_local] = grad_flat[selected_indices_local]
 
             proj_norm = projection_flat.norm() + eps
             if proj_norm <= eps:
@@ -517,7 +517,7 @@ def generate_instruct_directions_blocked(
 
             # 累积统计信息
             total_cosine_sim += actual_cosine_sim.item()
-            total_rank += len(selected_indices)
+            total_rank += len(selected_indices_local)
 
             direction = []
             start = 0
