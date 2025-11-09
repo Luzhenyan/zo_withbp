@@ -1,0 +1,32 @@
+name: zo_withbp
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - cudatoolkit=11.8  # 根据实际CUDA版本调整
+  - pip:
+    # 核心深度学习框架（CUDA版本）
+    # 注意：需要根据CUDA版本手动安装PyTorch
+    # CUDA 11.8: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+    # CUDA 12.1: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    # CUDA 12.1 (指定版本): pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+    
+    - "transformers>=4.30.0,<4.40.0"  # 与PyTorch 2.1.x兼容
+    - datasets>=2.12.0
+    
+    # 数据处理和可视化
+    - "numpy>=1.24.0,<2.0"  # PyTorch需要NumPy 1.x
+    - pandas>=2.0.0
+    - matplotlib>=3.7.0
+    - seaborn>=0.12.0
+    
+    # 工具库
+    - tqdm>=4.65.0
+    
+    # 联邦学习（可选）
+    - flwr>=1.4.0
+
