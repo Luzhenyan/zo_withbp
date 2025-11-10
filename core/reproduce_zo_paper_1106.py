@@ -1292,6 +1292,14 @@ def train(
                     manual_directions=manual_dirs,
                     data_provider=query_batch_provider,
                 )
+                
+                # 重新计算ZO的loss（使用当前训练batch，这是ZO实际优化的目标）
+                # 覆盖之前BP计算的loss，这样打印的是ZO的loss
+                with torch.no_grad():
+                    zo_logits = model(inputs).logits
+                    shift_logits = zo_logits[..., :-1, :].contiguous()
+                    shift_labels = labels[..., 1:].contiguous()
+                    loss = loss_fn(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
 
                 # 在Calibrate模式下使用BP梯度
                 if mode == 'Calibrate' and should_use_bp and bp_grads is not None:
